@@ -8,8 +8,7 @@ void tc1() {
     cout << "char at index 2: " << s1.get(2) << endl;
     try {
         cout << "char at index 22: " << s1.get(22) << endl;
-    }
-    catch (out_of_range & ofr) {
+    } catch (out_of_range& ofr) {
         cout << "Exception out_of_range: " << ofr.what() << endl;
     }
     // test indexOf
@@ -34,38 +33,39 @@ void tc2() {
     // test subString
     ConcatStringList s6 = s5.subString(5, 15);
     cout << "s6: " << s6.toString() << endl;
-    
+
     // test reverse
     ConcatStringList s7 = s5.reverse();
     cout << "s7: " << s7.toString() << endl;
 }
 
-void tc3() {
-    ConcatStringList * s1 = new ConcatStringList("Hello");
-    ConcatStringList * s2 = new ConcatStringList("_world");
-    ConcatStringList * s3 = new ConcatStringList(s1->concat(*s2));
+// void tc3() {
+//     ConcatStringList * s1 = new ConcatStringList("Hello");
+//     ConcatStringList * s2 = new ConcatStringList("_world");
+//     ConcatStringList * s3 = new ConcatStringList(s1->concat(*s2));
 
-    cout << ConcatStringList::refList.refCountsString() << endl;
-    cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
+//     cout << ConcatStringList::refList.refCountsString() << endl;
+//     cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
 
-    cout << "---After deleting s1---" << endl;
-    delete s1;
-    cout << ConcatStringList::refList.refCountsString() << endl;
-    cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
+//     cout << "---After deleting s1---" << endl;
+//     delete s1;
+//     cout << ConcatStringList::refList.refCountsString() << endl;
+//     cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
 
-    cout << "---After deleting s3---" << endl;
-    delete s3;
-    cout << ConcatStringList::refList.refCountsString() << endl;
-    cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
+//     cout << "---After deleting s3---" << endl;
+//     delete s3;
+//     cout << ConcatStringList::refList.refCountsString() << endl;
+//     cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
 
-    cout << "---After deleting s2---" << endl;
-    delete s2;
-    cout << ConcatStringList::refList.refCountsString() << endl;
-    cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
-}
+//     cout << "---After deleting s2---" << endl;
+//     delete s2;
+//     cout << ConcatStringList::refList.refCountsString() << endl;
+//     cout << ConcatStringList::delStrList.totalRefCountsString() << endl;
+// }
 
 int main() {
-    
+    // tc1();
+    tc2();
 
     return 0;
 }

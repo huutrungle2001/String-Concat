@@ -42,6 +42,7 @@ char ConcatStringList::get(int index) const {
     CharALNode* it = head;
 
     while (index > it->data.length()) {
+        // Trừ đi độ dài của 1 node
         index -= it->data.length();
         it = it->next;
     }
